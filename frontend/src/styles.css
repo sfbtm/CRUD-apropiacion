@@ -1,0 +1,127 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* APP */
+.app {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    padding: 20px;
+}
+
+.app__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* SECCIONES */
+.task-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.task-section__title {
+    margin-bottom: 15px;
+}
+
+/* FORMULARIOS */
+.form {
+    display: flex;
+    gap: 10px;
+}
+
+.form__input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.form__input:focus {
+    border-color: #007bff;
+}
+
+.form__button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form__button:hover {
+    background-color: #0056b3;
+}
+
+/* MODIFICADOR BOTÓN */
+.form__button--update {
+    background-color: #28a745;
+}
+
+.form__button--update:hover {
+    background-color: #1e7e34;
+}
+
+/* LISTA */
+.task-list {
+    list-style: none;
+}
+
+.task-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-list__item:last-child {
+    border-bottom: none;
+}
+
+.task-list__name {
+    font-size: 16px;
+}
+
+/* BOTONES DE LISTA */
+.task-list__button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* MODIFICADOR EDIT */
+.task-list__button--edit {
+    background-color: #17a2b8;
+}
+
+.task-list__button--edit:hover {
+    background-color: #117a8b;
+}
+
+/* CONTENEDOR DE ACCIONES */
+.task-list__actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* BOTÓN ELIMINAR */
+.task-list__button--delete {
+    background-color: #dc3545;
+}
+
+.task-list__button--delete:hover {
+    background-color: #a71d2a;
+}
