@@ -25,6 +25,7 @@ export const get = async(endpoint) => {
         if (!peticion.ok) throw new Error('error al encontrar tarea');
     
         const data = await peticion.json();
+        return data
     } catch (err) {
         console.error(err);
     }

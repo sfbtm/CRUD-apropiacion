@@ -1,35 +1,41 @@
 import { tarjetaTarea } from "./components/tarjetaTarea.js";
 import { get, post } from "./helpers/api.js";
 
+
 const app = document.querySelector(".app")
 
 // elementos del HTML que crean una tarea:
 const inputCrear = document.querySelector("#input-crear")
 const botonAgregar = document.querySelector(".form__button")
 
-botonAgregar.addEventListener("click", e => {
+botonAgregar.addEventListener("click", async e => {
     e.preventDefault()
     const titulo = inputCrear.value;
     if (!titulo.trim()){
         alert("Error al crear tarea: no puede ser vacío")
         return;
     }
-
+    
     const tarea = {
-        titulo: titulo
+        title: titulo
     }
-
-    post("tasks", tarea)
+    
+    await post("tasks", tarea)
+    actualizarLista()
 })
 
 
 const listaTareas = document.querySelector(".task-list");
 
-const tarea = {
-    title: "xd",
-    id: "1"
+
+const actualizarLista = async() => {
+
+    listaTareas.innerHTML = "";
+    const tareasLista = await get("tasks");
+    tareasLista.forEach (async(tarea) => {
+        console.log(tarea)
+        const tarjeta = await tarjetaTarea(tarea)
+        listaTareas.append(tarjeta)
+    })
 }
-
-const tarjeta = await tarjetaTarea(tarea)
-
-listaTareas.append(tarjeta)
+actualizarLista()
