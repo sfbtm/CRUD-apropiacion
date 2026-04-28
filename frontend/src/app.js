@@ -1,5 +1,5 @@
 import { tarjetaTarea } from "./components/tarjetaTarea.js";
-import { delet, get, post } from "./helpers/api.js";
+import { delet, get, patch, post } from "./helpers/api.js";
 
 
 const app = document.querySelector(".app")
@@ -48,10 +48,12 @@ listaTareas.addEventListener("click", async (e) => {
 
   if (e.target.matches(".task-list__button--delete")) {
     await delet(`tasks/${id}`);
-    tarjeta.remove(); 
-  }
+    actualizarLista()
+}
 
-  if (e.target.matches(".task-list__button--edit")) {
-    
-  }
+if (e.target.matches(".task-list__button--edit")) {
+    const nombreNuevo = prompt("Nuevo nombre de la tarea:")
+    await patch(`tasks/${id}`,{title: nombreNuevo})
+    actualizarLista()
+}
 })
