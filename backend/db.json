@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "title": "pen",
+      "id": "-gNnhcKg078",
+      "nombreNuevo": "sex"
+    },
+    {
+      "title": "PAPU",
+      "id": "OKNUq9Szapw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
